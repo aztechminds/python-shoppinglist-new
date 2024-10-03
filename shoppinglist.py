@@ -18,7 +18,7 @@ def add_item():
 
 def show_shoppinglist():
     # prüfe, ob die Liste leer ist
-    if shoppinglist:
+    if  shoppinglist:
         print("Deine Einkaufsliste:")
         
         # for loop zum Anzeigen der Artikel in der Einkaufsliste
@@ -27,10 +27,30 @@ def show_shoppinglist():
     else: 
         print ("Deine Einkaufsliste ist leer.")
 
-# Test der Funktion
-if __name__ == "__main__":
-    add_item()
-    print("Aktuelle Einkaufsliste:", shoppinglist)
+# Hauptfunktion
+def main():
+    while True:
+        # Anzeige des Menüs
+        print("\n----- Einkaufsliste -----")
+        print("1. Artikel zur Einkaufsliste hinzufügen")
+        print("2. Einkaufsliste anzeigen")
+        print("3. Programm beenden")
+        
+        # Frage den Benutzer nach seiner Wahl
+        choice = input("Bitte wähle eine Option (1, 2 oder 3): ")
+        
+        # Prüfe die Auswahl
+        if choice == "1":
+            add_item()
+        elif choice == "2":
+            show_shoppinglist()
+        elif choice == "3":
+            print("Programm wird beendet! Auf Wiedersehen")
+            break  # Beende die Schleife und das Programm
+        else:
+            print("Ungültige Auswahl. Bitte wähle 1, 2 oder 3")
 
-show_shoppinglist()
+# Starte das Programm nur, wenn dieses Skript direkt ausgeführt wird
+if __name__ == "__main__":
+    main()
 
