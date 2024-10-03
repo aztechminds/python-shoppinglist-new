@@ -14,7 +14,23 @@ def add_item():
     # Gib eine Bestätigungsmeldung aus
     print(f"{item} wurde zur Einkaufsliste hinzugefügt.")
 
+# Funktion zum Anzeigen der Einkaufsliste
+
+def show_shoppinglist():
+    # prüfe, ob die Liste leer ist
+    if shoppinglist:
+        print("Deine Einkaufsliste:")
+        
+        # for loop zum Anzeigen der Artikel in der Einkaufsliste
+        for item in shoppinglist:
+            print(f"- {item}")
+    else: 
+        print ("Deine Einkaufsliste ist leer.")
+
 # Test der Funktion
 if __name__ == "__main__":
     add_item()
     print("Aktuelle Einkaufsliste:", shoppinglist)
+
+show_shoppinglist()
+
